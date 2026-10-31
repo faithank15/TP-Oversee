@@ -3,7 +3,75 @@
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
 @source '../../storage/framework/views/*.php';
 
+/* ==========================================================
+    DESIGN SYSTEM TOKENS
+    The palette and shape scale from the project's design system,
+    exposed as Tailwind v4 theme tokens so they generate utilities
+    (bg-accent, text-primary, rounded-pill, shadow-card, ...).
+    ========================================================== */
+
+@font-face {
+    font-family: 'Urbanist';
+    src: url('../fonts/urbanist-latin-400-normal.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Urbanist';
+    src: url('../fonts/urbanist-latin-500-normal.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Urbanist';
+    src: url('../fonts/urbanist-latin-600-normal.woff2') format('woff2');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Urbanist';
+    src: url('../fonts/urbanist-latin-700-normal.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
 @theme {
-    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+    --font-sans: 'Urbanist', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
         'Segoe UI Symbol', 'Noto Color Emoji';
+
+    /* Core palette */
+    --color-accent: #00d083;
+    --color-primary: #002037;
+    --color-ink: #0a0c24;
+    --color-card: #ffffff;
+    --color-background: #ebeff5;
+
+    /* Derived shades (blended with color-mix so we don't hand-pick each one) */
+    --color-accent-hover: color-mix(in srgb, var(--color-accent) 85%, black);
+    --color-accent-soft: color-mix(in srgb, var(--color-accent) 15%, white);
+    --color-primary-hover: color-mix(in srgb, var(--color-primary) 85%, white);
+
+    /* Text */
+    --color-muted: color-mix(in srgb, var(--color-ink) 60%, white);
+
+    /* Borders and states */
+    --color-border: color-mix(in srgb, var(--color-ink) 18%, white);
+    --color-danger: #d6303f;
+    --color-danger-soft: color-mix(in srgb, var(--color-danger) 12%, white);
+    --color-warning: #e0a100;
+
+    /* Shape scale */
+    --radius-sm: 8px;
+    --radius: 12px;
+    --radius-pill: 999px;
+
+    /* Elevation */
+    --shadow-card: 0 1px 2px rgb(0 32 55 / 8%), 0 4px 12px rgb(0 32 55 / 6%);
 }
