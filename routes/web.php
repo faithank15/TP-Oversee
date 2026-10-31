@@ -12,6 +12,8 @@ Route::redirect('/', '/dashboard');
 Route::middleware('auth')->group(function () {
     Route::get('/dashboard', DashboardController::class)->name('dashboard');
 
+    Route::view('/account', 'account')->name('account');
+
     Route::get('products-trash', [ProductController::class, 'trash'])->name('products.trash');
     Route::patch('products/{id}/restore', [ProductController::class, 'restore'])->name('products.restore');
     Route::resource('products', ProductController::class);
