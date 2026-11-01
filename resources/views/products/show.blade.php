@@ -8,7 +8,7 @@
             : ($product->is_low_stock ? ['Stock faible', 'warning'] : ['En stock', 'accent']);
     @endphp
 
-    <div class="max-w-4xl">
+    <div class="w-full">
         <a href="{{ route('products.index') }}"
             class="inline-flex items-center gap-1 text-sm font-semibold text-muted hover:text-ink no-underline mb-4">
             <x-iconoir-nav-arrow-left class="w-4 h-4" />
