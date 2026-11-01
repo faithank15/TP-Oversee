@@ -7,7 +7,7 @@
         $typeOptions = collect($types)->mapWithKeys(fn ($type) => [$type->value => $type->label()])->all();
     @endphp
 
-    <div class="max-w-2xl">
+    <div class="max-w-2xl mx-auto">
         <a href="{{ route('movements.index') }}"
             class="inline-flex items-center gap-1 text-sm font-semibold text-muted hover:text-ink no-underline mb-4">
             <x-iconoir-nav-arrow-left class="w-4 h-4" />

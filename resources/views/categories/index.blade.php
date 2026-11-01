@@ -2,7 +2,7 @@
 @section('title', 'Catégories')
 
 @section('content')
-    <div class="">
+    <div class="max-w-3xl mx-auto">
         {{-- Header --}}
         <div class="flex flex-wrap items-center justify-between gap-4 mb-6">
             <div>

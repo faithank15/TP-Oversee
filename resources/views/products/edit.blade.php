@@ -7,7 +7,7 @@
         $unitOptions = collect($units)->mapWithKeys(fn ($unit) => [$unit->value => $unit->label()])->all();
     @endphp
 
-    <div class="max-w-3xl">
+    <div class="max-w-3xl mx-auto">
         <a href="{{ route('products.show', $product) }}"
             class="inline-flex items-center gap-1 text-sm font-semibold text-muted hover:text-ink no-underline mb-4">
             <x-iconoir-nav-arrow-left class="w-4 h-4" />
