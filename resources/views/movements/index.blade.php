@@ -14,7 +14,6 @@
         </x-button>
     </div>
 
-    {{-- Filters (GET, uses existing controller query params) --}}
     <form method="GET" action="{{ route('movements.index') }}" class="flex flex-wrap items-end gap-3 mb-5">
         <label class="flex flex-col gap-1">
             <span class="text-xs font-bold uppercase tracking-wider text-muted">Produit</span>
@@ -58,7 +57,6 @@
         </x-button>
     </form>
 
-    {{-- Table --}}
     <div class="bg-card rounded-(--radius) overflow-hidden">
         <div class="overflow-x-auto">
             <table class="w-full text-sm">

@@ -1,12 +1,11 @@
 <aside
     {{ $attributes->class('w-64 shrink-0 bg-card rounded-(--radius) py-5 px-4 flex flex-col sticky top-4 self-start h-[calc(100vh-2rem)] overflow-y-auto') }}>
-    {{-- Brand --}}
+
     <a href="{{ route('dashboard') }}" class="flex items-center px-2 gap-3 mb-8 no-underline">
         <x-app-logo class="w-auto shrink-0" />
         <span class="text-xl font-extrabold tracking-tight text-ink">Oversee</span>
     </a>
 
-    {{-- Menu --}}
     <p class="px-4 mb-2 text-xs font-bold uppercase tracking-wider text-muted">Menu</p>
     <nav class="flex flex-col gap-1">
         <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
@@ -30,7 +29,6 @@
         </x-nav-link>
     </nav>
 
-    {{-- Account --}}
     <p class="px-4 mt-auto pt-8 mb-2 text-xs font-bold uppercase tracking-wider text-muted">Compte</p>
     <nav class="flex flex-col gap-1 mb-1">
         <x-nav-link :href="route('account')" :active="request()->routeIs('account')">
