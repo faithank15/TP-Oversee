@@ -48,6 +48,17 @@ document.addEventListener('keydown', (event) => {
     if (event.key === 'Escape') closeAllDropdowns();
 });
 
+// Clickable rows: a click anywhere on an element with [data-href] navigates there,
+// unless it landed on an interactive child (link, button, input, open menu) or the
+// user was selecting text.
+document.addEventListener('click', (event) => {
+    if (event.target.closest('a, button, input, select, label, [data-dropdown-menu]')) return;
+    if (window.getSelection()?.toString()) return;
+
+    const row = event.target.closest('[data-href]');
+    if (row) window.location = row.getAttribute('data-href');
+});
+
 // Any layout shift invalidates the fixed position, so just close.
 window.addEventListener('resize', closeAllDropdowns);
 window.addEventListener('scroll', closeAllDropdowns, true);

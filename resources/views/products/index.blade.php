@@ -13,7 +13,6 @@
         ]);
     @endphp
 
-    {{-- Page header --}}
     <div class="flex flex-wrap items-center justify-between gap-4 mb-6">
         <div>
             <h1 class="text-3xl font-bold m-0">Produits</h1>
@@ -25,7 +24,6 @@
         </x-button>
     </div>
 
-    {{-- Tabs --}}
     <div class="flex items-center gap-6 border-b border-border mb-5">
         <a href="{{ route('products.index') }}" @class([
             'pb-3 -mb-px font-semibold border-b-2 transition',
@@ -37,7 +35,6 @@
         </a>
     </div>
 
-    {{-- Toolbar : search + filters (GET, uses existing controller query params) --}}
     <form method="GET" action="{{ route('products.index') }}" class="flex flex-wrap items-center gap-3 mb-5">
         <input type="hidden" name="sort" value="{{ $sort }}">
         <input type="hidden" name="dir" value="{{ $dir }}">
@@ -72,7 +69,6 @@
         </x-button>
     </form>
 
-    {{-- Table --}}
     <div class="bg-card rounded-(--radius) overflow-hidden">
         <div class="overflow-x-auto">
             <table class="w-full text-sm">
@@ -120,7 +116,8 @@
                                     ? ['Stock faible', 'warning']
                                     : ['En stock', 'accent']);
                         @endphp
-                        <tr class="border-t border-border hover:bg-accent-soft/40 transition">
+                        <tr data-href="{{ route('products.show', $product) }}"
+                            class="border-t border-border hover:bg-accent-soft/40 transition cursor-pointer">
                             <td class="px-4 py-3">
                                 <input type="checkbox" class="w-4 h-4 rounded-sm accent-accent align-middle">
                             </td>
@@ -193,7 +190,6 @@
             </table>
         </div>
 
-        {{-- Footer : count + pagination --}}
         @if ($products->hasPages() || $products->total() > 0)
             <div class="flex flex-wrap items-center justify-between gap-3 px-4 py-3 border-t border-border">
                 <span class="text-sm text-muted">
